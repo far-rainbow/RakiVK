@@ -1,0 +1,14 @@
+[Unit]
+Description=rakivk bot service
+
+[Service]
+Type=forking
+User=root
+WorkingDirectory=/root/bot/raki_vk_bot/
+ExecStart=/root/bot/raki_vk_bot/restart.sh
+ExecReload=/root/bot/raki_vk_bot/restart.sh
+ExecStop=/root/bot/raki_vk_bot/kill.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
